@@ -1,0 +1,27 @@
+server:
+  port: '8080'
+  servlet:
+    context-path: /api/v1/employee-management-system
+
+application:
+  name: employee
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee_management_system
+    username: postgres
+    password: Kumar@123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  file:
+    path: './tmp/${application.name}'
+  level:
+    org:
+      springframework:
+        web: debug
